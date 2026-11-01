@@ -1,0 +1,75 @@
+name: AlecoAir D12/D16 ECO Dehumidifier
+
+products:
+  - id: gcthce4ejb8nzgow
+    manufacturer: AlecoAir
+    model: D12/D16 ECO
+
+entities:
+  - entity: humidifier
+    class: dehumidifier
+    dps:
+      - id: 1
+        name: switch
+        type: boolean
+      - id: 2
+        name: humidity
+        type: integer
+        range:
+          min: 25
+          max: 80
+      - id: 5
+        name: mode
+        type: string
+        mapping:
+          - dps_val: Sunny_Day
+            value: Sunny Day
+          - dps_val: Rain_Day
+            value: Rain Day
+          - dps_val: Continuous
+            value: Continuous
+      - id: 6
+        name: current_humidity
+        type: integer
+
+  - entity: fan
+    name: Fan
+    dps:
+      - id: 1
+        name: switch
+        type: boolean
+      - id: 4
+        name: speed
+        type: string
+        mapping:
+          - dps_val: low
+            value: 50
+          - dps_val: high
+            value: 100
+
+  - entity: sensor
+    name: Room Temperature
+    class: temperature
+    dps:
+      - id: 7
+        name: sensor
+        type: integer
+        class: measurement
+        unit: C
+
+  - entity: switch
+    name: Sleep
+    icon: mdi:sleep
+    category: config
+    dps:
+      - id: 14
+        name: switch
+        type: boolean
+
+  - entity: lock
+    name: Child Lock
+    category: config
+    dps:
+      - id: 16
+        name: lock
+        type: boolean

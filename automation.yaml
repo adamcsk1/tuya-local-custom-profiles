@@ -1,0 +1,10 @@
+# Add this list item to automations.yaml (or create the automation in the UI).
+- id: restore_tuya_local_custom_profiles_on_start
+  alias: Restore custom Tuya Local profiles on startup
+  description: Restore any custom device profiles after HACS updates.
+  triggers:
+    - trigger: homeassistant
+      event: start
+  actions:
+    - action: shell_command.restore_tuya_local_custom_profiles
+  mode: single

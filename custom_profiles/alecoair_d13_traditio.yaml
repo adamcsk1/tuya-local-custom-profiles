@@ -1,0 +1,39 @@
+name: AlecoAir D13 TRADITIO Dehumidifier
+
+products:
+  - id: iodmvdwo1jjf8x5d
+    manufacturer: AlecoAir
+    model: D13 TRADITIO
+
+entities:
+  - entity: humidifier
+    class: dehumidifier
+    dps:
+      - id: 1
+        name: switch
+        type: boolean
+      - id: 2
+        name: humidity
+        type: integer
+        range:
+          min: 25
+          max: 80
+      - id: 5
+        name: mode
+        type: string
+        mapping:
+          - dps_val: Manual
+            value: Manual
+          - dps_val: SLeeping
+            value: Sleeping
+      - id: 6
+        name: current_humidity
+        type: integer
+
+  - entity: lock
+    name: Child Lock
+    category: config
+    dps:
+      - id: 16
+        name: lock
+        type: boolean

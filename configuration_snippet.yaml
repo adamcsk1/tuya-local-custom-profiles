@@ -1,0 +1,3 @@
+# Merge under an existing shell_command: key if present.
+shell_command:
+  restore_tuya_local_custom_profiles: "sh /config/tuya-local-custom-profiles/restore_profiles.sh"
